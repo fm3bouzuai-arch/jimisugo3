@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Roboto+Slab:wght@400;700&display=swap');
+
+:root {
+    /* Colors */
+    --color-primary: #FFCC00;
+    /* みーさんイエロー */
+    --color-secondary: #0099FF;
+    /* ひかるブルー */
+    --color-tertiary: #FF3366;
+    /* Kちゃんレッド */
+    --color-bg: #F9F5E3;
+    /* 和紙風ベージュ */
+    --color-text: #333333;
+    --color-accent: #222222;
+    --color-white: #FFFFFF;
+
+    /* Fonts */
+    --font-base: 'Noto Sans JP', sans-serif;
+    --font-display: 'Roboto Slab', serif;
+    /* アカデミック感 */
+
+    /* Spacing */
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    --spacing-xl: 64px;
+
+    /* Borders */
+    --border-width: 3px;
+    --border-radius: 8px;
+}
+
+body {
+    font-family: var(--font-base);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+    background-image: url('../assets/images/bg-pattern.png');
+    /* あとでパターン画像を追加するかも */
+    background-size: 100px;
+}
+
+a {
+    transition: all 0.3s ease;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+    font-family: var(--font-base);
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--color-accent);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-lg);
+    display: inline-block;
+    border-bottom: var(--border-width) solid var(--color-accent);
+    padding-bottom: var(--spacing-sm);
+}
+
+/* Layout */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+header {
+    background-color: var(--color-white);
+    padding: var(--spacing-md) 0;
+    border-bottom: var(--border-width) solid var(--color-accent);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: var(--spacing-sm);
+    mix-blend-mode: multiply;
+}
+
+nav ul {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+nav a {
+    font-weight: 700;
+}
+
+nav a:hover {
+    color: var(--color-secondary);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-accent);
+    padding: 10px 24px;
+    border: var(--border-width) solid var(--color-accent);
+    border-radius: var(--border-radius);
+    font-weight: 900;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0 var(--color-accent);
+    transform: translate(-2px, -2px);
+}
+
+.btn:active {
+    box-shadow: 0 0 0 transparent;
+    transform: translate(0, 0);
+}
+
+/* Utilities */
+.text-center {
+    text-align: center;
+}
+
+.mb-lg {
+    margin-bottom: var(--spacing-lg);
+}
+
+.mt-lg {
+    margin-top: var(--spacing-lg);
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+    background-color: var(--color-bg);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-logo {
+    max-width: 80%;
+    margin-top: -50px;
+    margin-bottom: -50px;
+    transition: transform 0.5s ease;
+    mix-blend-mode: multiply;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-logo:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+.hero-catch {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.4;
+    text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.8);
+}
+
+.hero-lead {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text);
+}
+
+.hero-chars {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.char-img {
+    height: 200px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* Character Outlines */
+.char-1 {
+    /* Mee-san */
+    filter: drop-shadow(3px 3px 0 #00FFFF) drop-shadow(-1px -1px 0 #00FFFF);
+}
+
+.char-2 {
+    /* Hikaru */
+    filter: drop-shadow(3px 3px 0 #00FF00) drop-shadow(-1px -1px 0 #00FF00);
+}
+
+.char-3 {
+    /* K-chan */
+    filter: drop-shadow(3px 3px 0 #FFA500) drop-shadow(-1px -1px 0 #FFA500);
+}
+
+.char-img:hover {
+    transform: translateY(-10px);
+}
+
+/* Sections */
+section {
+    padding: var(--spacing-lg) 0;
+}
+
+.intro {
+    background-color: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    border: var(--border-width) solid var(--color-accent);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Episode Grid */
+.episode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.episode-card {
+    background: white;
+    border: var(--border-width) solid var(--color-accent);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.episode-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 0 var(--color-accent);
+}
+
+.episode-card figure {
+    height: 180px;
+    background-color: var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: var(--border-width) solid var(--color-accent);
+    overflow: hidden;
+}
+
+.episode-card img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.card-content {
+    padding: var(--spacing-md);
+}
+
+.tag {
+    display: inline-block;
+    background: var(--color-secondary);
+    color: white;
+    padding: 2px 8px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    margin-bottom: var(--spacing-sm);
+    font-weight: bold;
+}
+
+.episode-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Details Page */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: var(--spacing-lg);
+    border: var(--border-width) solid var(--color-accent);
+    border-radius: var(--border-radius);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.episode-content {
+    background: white;
+    padding: var(--spacing-lg);
+    border: var(--border-width) solid var(--color-accent);
+    border-radius: var(--border-radius);
+}
+
+.dialogue {
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+}
+
+.dialogue img.icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--color-accent);
+    background: var(--color-bg);
+}
+
+.dialogue-text {
+    background: #f0f0f0;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 12px;
+    position: relative;
+}
+
+.dialogue-text::after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 15px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #f0f0f0;
+}
+
+/* Cast Page */
+.cast-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.cast-item {
+    display: flex;
+    flex-direction: column;
+    /* Mobile first */
+    gap: var(--spacing-md);
+    align-items: center;
+    background: white;
+    padding: var(--spacing-lg);
+    border: var(--border-width) solid var(--color-accent);
+    border-radius: var(--border-radius);
+}
+
+.cast-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    background: var(--color-bg);
+    border-radius: 50%;
+    border: var(--border-width) solid var(--color-accent);
+}
+
+@media (min-width: 768px) {
+    .cast-item {
+        flex-direction: row;
+        text-align: left;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    margin-top: var(--spacing-xl);
+}

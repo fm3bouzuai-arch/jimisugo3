@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エピソード詳細 | 地味スゴさんを連れてきた。</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="地味スゴさんを連れてきた。">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="episodes.html">地味スゴ図鑑</a></li>
+                    <li><a href="cast.html">メンバー紹介</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="mt-lg">
+            <a href="episodes.html" style="font-weight: bold;">&larr; 一覧に戻る</a>
+        </div>
+
+        <article class="episode-content mt-lg">
+            <h1 id="ep-title">ジョン・フレミング</h1>
+            <p class="mb-lg" id="ep-subtitle">電気制御の進歩に貢献！フレミングが発明した「二極真空管」</p>
+
+            <!-- YouTube Embed -->
+            <div class="video-container">
+                <!-- ダミーのYouTube動画ID -->
+                <iframe id="ep-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+            <div class="mt-lg">
+                <h2>エピソード解説</h2>
+                <div class="dialogue">
+                    <img src="assets/images/char_1.png" alt="みーさん" class="icon">
+                    <div class="dialogue-text">
+                        <p id="dialogue-1">ええ！？真空管ってパソコンの先祖みたいなものなの？</p>
+                    </div>
+                </div>
+                <div class="dialogue" style="flex-direction: row-reverse;">
+                    <img src="assets/images/fleming.png" alt="偉人" class="icon" id="ep-char-icon">
+                    <div class="dialogue-text">
+                        <p id="dialogue-2">いかにも。私が発明した二極真空管がなければ、ラジオもコンピュータも生まれなかったかもしれんぞ。</p>
+                    </div>
+                </div>
+
+                <div class="mt-lg">
+                    <h3>ここがスゴい！</h3>
+                    <p id="ep-desc">
+                        フレミングは、エジソン効果（電球の内側が黒くなる現象）を詳しく研究し、電流が一方通行にしか流れない性質を発見。これを利用して、無線信号の検波（信号を取り出すこと）に成功しました。これが後の電子工学の発展の礎となったのです。
+                    </p>
+                </div>
+            </div>
+
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 地味スゴさんを連れてきた。 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Simple script to switch content based on URL param -->
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+
+        const data = {
+            'gennai': {
+                title: '平賀源内',
+                subtitle: '日本初！？エレキテルで電気の実験をした江戸の天才',
+                desc: '江戸時代の天才発明家、平賀源内。彼が紹介した「エレキテル」は、静電気を発生させる装置でした。実はこれ、医療器具として使われていたとか？本業の本草学者（薬草博士）としての顔や、コピーライターとしての顔も持つ、元祖マルチクリエイターです。',
+                video: 'https://www.youtube.com/embed/LXNzitmzNmk',
+                img: 'assets/images/gennai.png',
+                d1: 'エレキテルって、発電機じゃなくて見世物だったの？',
+                d2: 'いかにも。「オランダ渡りの不思議な箱」として、江戸っ子たちを驚かせたのじゃ。ビリっとくるのが体に良いとな。'
+            },
+            'adler': {
+                title: 'アルフレッド・アドラー',
+                subtitle: '「嫌われる勇気」で有名！個人の心理を探求したアドラー心理学',
+                desc: 'フロイトやユングと並ぶ心理学の三大巨匠のひとり。すべての悩みは対人関係にあると考え、「課題の分離」など、現代人の生き方にも通じる革新的な考え方を提唱しました。',
+                video: '', // No video
+                img: 'assets/images/adler.png',
+                d1: '「嫌われる勇気」って本、流行ったよね。アドラーさんが元ネタ？',
+                d2: 'そうだよ。過去のトラウマを否定し「目的論」を唱えたんだ。君が今幸せでないなら、それは君が「幸せにならない」と決めているからだよ。'
+            },
+            'achilles': {
+                title: 'アキレス',
+                subtitle: '最強だけどカカトだけ弱い！？ギリシャ神話の英雄',
+                desc: 'トロイア戦争で無双したギリシャ軍最強の英雄。不死身の体を持っていたが、唯一の弱点がカカトだったことから「アキレス腱」という言葉が生まれました。',
+                video: '', // No video
+                img: 'assets/images/achilles.png',
+                d1: 'アキレス腱切ったら痛いよね…ここが弱点って辛すぎる！',
+                d2: '母上が私を不死身にするために冥界の川に浸けた時、掴んでいたのがカカトだったからそこだけ水に濡れなかったのだ…無念！'
+            }
+        };
+
+        if (data[id]) {
+            document.getElementById('ep-title').textContent = data[id].title;
+            document.getElementById('ep-subtitle').textContent = data[id].subtitle;
+            document.getElementById('ep-desc').textContent = data[id].desc;
+
+            const videoFrame = document.getElementById('ep-video');
+            if (data[id].video) {
+                videoFrame.src = data[id].video;
+                videoFrame.parentElement.style.display = 'block';
+            } else {
+                videoFrame.parentElement.style.display = 'none';
+            }
+
+            document.getElementById('ep-char-icon').src = data[id].img;
+            document.getElementById('dialogue-1').textContent = data[id].d1;
+            document.getElementById('dialogue-2').textContent = data[id].d2;
+        }
+    </script>
+</body>
+
+</html>
